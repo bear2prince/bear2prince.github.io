@@ -153,17 +153,21 @@
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">0</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">1</a></li>
-  <li><a href="#section-2" id="markdown-toc-section-2">2</a></li>
-  <li><a href="#section-3" id="markdown-toc-section-3">3</a></li>
-  <li><a href="#section-4" id="markdown-toc-section-4">4</a></li>
-  <li><a href="#section-5" id="markdown-toc-section-5">5</a></li>
-  <li><a href="#section-6" id="markdown-toc-section-6">6</a></li>
-  <li><a href="#section-7" id="markdown-toc-section-7">7</a></li>
+  <li><a href="#chapter-1" id="markdown-toc-chapter-1">chapter 1</a></li>
+  <li><a href="#chapter-2-21" id="markdown-toc-chapter-2-21">chapter 2 2.1.</a></li>
+  <li><a href="#chapter-2-24" id="markdown-toc-chapter-2-24">chapter 2 2.4.</a></li>
+  <li><a href="#keng" id="markdown-toc-keng">Keng</a></li>
+  <li><a href="#keng-1" id="markdown-toc-keng-1">Keng</a></li>
+  <li><a href="#chapter-2-231" id="markdown-toc-chapter-2-231">chapter 2 2.3.1.</a></li>
+  <li><a href="#chapter-2-3" id="markdown-toc-chapter-2-3">chapter 2 3.</a></li>
+  <li><a href="#chapter-2-3-1" id="markdown-toc-chapter-2-3-1">chapter 2 3.</a></li>
+  <li><a href="#chapter-2-42" id="markdown-toc-chapter-2-42">chapter 2 4.2.</a></li>
+  <li><a href="#keng-2" id="markdown-toc-keng-2">Keng</a></li>
+  <li><a href="#chapter-231" id="markdown-toc-chapter-231">chapter 2.3.1.</a></li>
+  <li><a href="#chapter-2-24-return-object" id="markdown-toc-chapter-2-24-return-object">chapter 2 2.4. 第四步return object</a></li>
 </ul>
 
-<h2 id="section">0</h2>
+<h2 id="chapter-1">chapter 1</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo1</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -178,7 +182,7 @@
 <p>foo1()的this是default binding，在非strict mode下，此this bind到global-object，
 this.bar1()调用global中的bar1函数（声明在global的变量或函数都是global-object的property）。bar1()的this是implicit binding，此this被bind到foo1()中this所指向的global-object。由于global-object中没有a，所以this.a为undefined。</p>
 
-<h2 id="section-1">1</h2>
+<h2 id="chapter-2-21">chapter 2 2.1.</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo2</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -191,7 +195,7 @@ this.bar1()调用global中的bar1函数（声明在global的变量或函数都�
 
 <p>bar2()在foo2()中被plain and undecorated invoked，所以bar2()的this是default binding，指向global-object。由于global-object中没有a，所以this.a为undefined。</p>
 
-<h2 id="section-2">2</h2>
+<h2 id="chapter-2-24">chapter 2 2.4.</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//new 新生成一个 instance</span>
 <span class="kd">function</span> <span class="nx">foo3</span><span class="p">(</span><span class="nx">something</span><span class="p">,</span><span class="nx">flag</span><span class="p">)</span>
@@ -211,7 +215,7 @@ this.bar1()调用global中的bar1函数（声明在global的变量或函数都�
 
 <p>new binding 新生成一个object，只有link prototype，没有内存拷贝，所以是空object，其中没有a。并且传入foo3的flag参数为false，所以foo3中并没有执行this.a = something，新object中没有a，所以输出为undefined。（当传入foo3的flag参数为true时，foo3执行this.a = something，因为new binding优先于implicit binding，此时this指向新创建的object，由于此object中没有a，所以创建a并赋值4。而obj3中a的值还是3）</p>
 
-<h2 id="section-3">3</h2>
+<h2 id="keng">Keng</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Keng: 函数体只在函数被调用时才执行，函数名在编译时就被分配（hoisting)</span>
 <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span>
@@ -236,7 +240,7 @@ this.bar1()调用global中的bar1函数（声明在global的变量或函数都�
 <p>当代码编译到function bar5()时并不会报错，因为函数体只在函数被调用时才执行（函数名在编译时就被分配）。
 当代码运行到bar5()并执行函数体中foo5(obj)时也不会报错，因为babeljs将let翻译成var，obj的声明被hoisted，执行foo5(obj)时RHS可以找到obj，但当执行foo5()函数体时，由于obj还没有被赋值，执行fn.a（obj.a）时报错。</p>
 
-<h2 id="section-4">4</h2>
+<h2 id="keng-1">Keng</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Keng: Compiler: var 允许函数、变量重名；let 报错</span>
 <span class="kd">function</span> <span class="nx">test</span><span class="p">(){}</span>
@@ -246,7 +250,7 @@ this.bar1()调用global中的bar1函数（声明在global的变量或函数都�
 
 <p>let 不允许函数、变量重名，在编译的时候就会报错。而var 允许函数、变量重名。</p>
 
-<h2 id="section-5">5</h2>
+<h2 id="chapter-2-231">chapter 2 2.3.1.</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//helper</span>
 <span class="kd">function</span> <span class="nx">foo8</span><span class="p">(</span><span class="nx">something</span><span class="p">)</span>
@@ -277,7 +281,7 @@ this.bar1()调用global中的bar1函数（声明在global的变量或函数都�
 - 于是明确bind函数的输入参数为fn和obj，返回值为一个函数binded
 - 由于我们的目标是hard binding fn和obj，也就是说binded函数需要通过调用fn和obj来生成一个包含fn和obj的closure。由于我们的目标是绑定fn和obj，并且fn可以接收参数，确定关键字apply。binded函数体内容为fn.apply(obj, arguments)，此处arguments的类型为array。</p>
 
-<h2 id="section-6">6</h2>
+<h2 id="chapter-2-3">chapter 2 3.</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//理解 new binding; hard binding</span>
 <span class="kd">function</span> <span class="nx">foo9</span><span class="p">(</span><span class="nx">something</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
@@ -312,8 +316,124 @@ this.bar1()调用global中的bar1函数（声明在global的变量或函数都�
 - “<strong><em>this</em></strong> is a binding made for each function invocation”，当调用binded()时会生成一个binded()的this指针。
 - new binding 优先级在 explicit binding 下不一定：new binding 不能overide closure 形式的 hard binding，new binding 的优先级高过(overide) bind()</p>
 
-<h2 id="section-7">7</h2>
+<h2 id="chapter-2-3-1">chapter 2 3.</h2>
 
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">val</span> <span class="o">=</span> <span class="nx">p1</span> <span class="o">+</span> <span class="nx">p2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// using `null` here because we don't care about</span>
+<span class="c1">// the `this` hard-binding in this scenario, and</span>
+<span class="c1">// it will be overridden by the `new` call anyway!</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="s2">"p1"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">baz</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bar</span><span class="p">(</span><span class="s2">"p2"</span><span class="p">);</span>
+<span class="nx">baz</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span> <span class="c1">// p1p2</span></code></pre></figure>
+
+<p>bind函数不但可以将this与对象（这里是null）绑定，同时也固定了一个参数（“p1”）。</p>
+
+<h2 id="chapter-2-42">chapter 2 4.2.</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">javascript</span><span class="err">的赋值表达式本身有返回值。返回的是等号右边赋的值（例子中是</span><span class="mi">3</span><span class="err">）</span>
+
+<span class="c1">//'use strict' status of content</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="s2">"use strict"</span><span class="p">;</span>
+    <span class="nx">foo</span><span class="p">();</span> <span class="c1">// 2</span>
+<span class="p">})();</span></code></pre></figure>
+
+<p>default binding时，binding的对象是global-object还是undefined
+取决于“the strict mode status of the function content”
+也就是被调用的函数在被定义时是否是strict mode（而非调用时）</p>
+
+<h2 id="keng-2">Keng</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Keng</span><span class="err">:</span> <span class="err">函数缺少传入参数时自动补充</span><span class="kc">undefined</span>
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span><span class="mi">1</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1 1</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 2 undefied</span>
+    <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span> <span class="c1">//  NaN</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">foo2</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="nx">arguments</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo2</span><span class="p">()(</span><span class="mi">324234</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 324236 TypeError</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo2</span><span class="p">());</span> <span class="c1">// 324236 TypeError</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">NaN</span><span class="p">(</span><span class="mi">324234</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 324236 TypeError</span></code></pre></figure>
+
+<p>调用foo2()时没有传入参数，自动补充undefined，返回a+b时因为+运算，强制转换为数字类型，
+值为NaN，所以foo2()(324234,2)相当于NaN(324234,2)</p>
+
+<h2 id="chapter-231">chapter 2.3.1.</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">hard</span><span class="o">-</span><span class="nx">binding</span> <span class="nx">helper</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">obj</span><span class="o">=</span><span class="p">{</span>
+        <span class="na">a</span><span class="p">:</span><span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">foo1</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">bind</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="nx">fn</span><span class="p">){</span>
+        <span class="kd">function</span> <span class="nx">binded</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="nx">arguments</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">binded</span>
+    <span class="p">}</span>
+
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">bind</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="nx">foo</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">));</span>
+    <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">bind</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="nx">foo2</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">));</span>
+<span class="p">})()</span></code></pre></figure>
+
+<p>let a = bind(obj,foo)将closure中带有obj和foo的binded()函数地址赋给a。当执行a(3,4)时，a(3,4)返回foo.apply(obj,[3,4])的返回值。foo(a,b)的返回值为a+b，所以foo.apply(obj,[3,4])将返回7，console.log(a(3,4))输出7。
+同理，console.log(b(5,6))输出-1。
+此外，由于let a =bind(obj,foo)和let b =bind(obj,foo2)两处将函数foo()和foo2()的this指针都绑定到obj，所以两函数中的console.log(this.a)都将输出obj中的a，值为1。</p>
+
+<h2 id="chapter-2-24-return-object">chapter 2 2.4. 第四步return object</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">c</span><span class="o">=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span> <span class="c1">// {c:1}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span> <span class="c1">// TypeError</span>
+    <span class="c1">// 只有return 是 Object 时 才执行return，否则</span>
+    <span class="c1">// 返回 new 生成的 object</span>
+
+    <span class="kd">function</span> <span class="nx">foo1</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">c</span><span class="o">=</span><span class="nx">a</span><span class="o">-</span><span class="nx">b</span>
+        <span class="k">return</span> <span class="p">{</span><span class="na">d</span><span class="p">:</span><span class="k">this</span><span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">let</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo1</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>
+    <span class="c1">// 1,2,3 顺序执行，在第四步时才考虑 return</span>
+<span class="p">})()</span></code></pre></figure>
+
+<p>console.log(e)处输出为{c:1},foo()中this.c=1为e所指向的新object生成property c。由于e所指向的是一个对象，而非function，所以e(4,5)报TypeError错。
+当函数返回值为object时，如foo1(),f所指向的object为foo1()返回的{d:this}。注意：当函数返回值为object时，new binding前三步按顺序执行，只在第四步时考虑return。</p>
 
             </article>
         </div>
