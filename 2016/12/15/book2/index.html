@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>各种坑</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="canonical" href="/2016/12/15/book2/">
+	<link rel="alternate" type="application/rss+xml" title="bear2prince" href="/feed.xml">
+	
+	<meta name="description" content="个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/donate/"><strong>打赏</strong></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://bear2prince.github.io">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://bear2prince.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+            <li><a href="/feed.xml">RSS订阅</a></li>
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="https://github.com/luoyan35714/LessOrMore.git">本项目</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<link rel="stylesheet" href="/styles/css/prism.css">
+<script src="/styles/js/prism.js"></script>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>各种坑</h1>
+		    <p>Post on Dec 15, 2016 by <a href="/about">bear2prince</a></p>
+		-->
+		    <h1>It's our wits that make us men.</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#document-ref">document</a>	/
+    	<a href="/tag/#教程-ref">教程</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+<!--
+    
+      
+      
+      
+      
+
+      
+        <li><a href="#year_2016">2016</a>
+          <ul class="nav">
+            <li><a href="#month_2016_December">December</a></li>
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            </ul>
+          </li>
+      
+    
+-->
+  </ul>
+</div> 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">各种坑</h1>
+              <!--
+                <p class="post-meta">Dec 15, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Dec 15, 2016</span> By <a target="_blank" href="http://localhost:4000">bear2prince</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#chapter-3-3" id="markdown-toc-chapter-3-3">chapter 3 3.</a></li>
+  <li><a href="#section" id="markdown-toc-section">2</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">3</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">4</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">5</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">6</a></li>
+  <li><a href="#section-5" id="markdown-toc-section-5">7</a></li>
+</ul>
+
+<h2 id="chapter-3-3">chapter 3 3.</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'aepofi'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// bar();</span></code></pre></figure>
+
+<p>只要函数不是以function开头，就是function expression而不是function declaration。此时，函数名声明在function自己的scope当中，function的enclosing scope中无法调用此函数。此例中，bar被声明在其自己的函数scope当中，在global scope中无法调用bar(),所以执行到bar()时报ReferenceError。</p>
+
+<h2 id="section">2</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// ------------ hoisting ignore</span>
+<span class="c1">// function override ---------------</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">// 3</span>
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">// 3</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>函数声明比变量声明hoisting优先级高，当两种声明同时存在时，变量声明hoisting会被ignore。当声明两个同名函数时，后声明的函数会翻盖先声明的函数。综上，此例中foo()输出3。</p>
+
+<h2 id="section-1">3</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// ---------- Closure -----------</span>
+<span class="kd">function</span> <span class="nx">foo1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">bar</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">foo1</span><span class="p">()</span>
+<span class="nx">a</span><span class="p">();</span><span class="c1">//输出3，但是bar()函数并没有closure，因为bar()中没有调用其enclosing scope中的参数</span>
+
+<span class="kd">function</span> <span class="nx">foo2</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">a</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">foo2</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//输出3，bar()函数有closure，其中包含foo2()中的a = 3。</span>
+
+<span class="kd">function</span> <span class="nx">foo3</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">aa</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">fooo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+        <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aa</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">bar</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">fooo</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">foo3</span><span class="p">();</span><span class="c1">//输出3和4</span>
+       <span class="c1">//fooo()和bar()都有closure，其中包含foo3()scope中的aa=3。</span></code></pre></figure>
+
+<h2 id="section-2">4</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Keng:</span>
+<span class="kd">var</span> <span class="nx">aa</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="kd">function</span> <span class="nx">foo4</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aa</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">bar</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">foo4</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span></code></pre></figure>
+
+<p>console.log(a())输出4，需要注意的是，虽然bar()调用了其enclosing scope中的参数（global scope中的aa=4），但是bar()没有closure。</p>
+
+<h2 id="section-3">5</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Immediate Enclosing Scope</span>
+<span class="kd">function</span> <span class="nx">foo5</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">bb</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="kd">function</span> <span class="nx">baz</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="nx">bar1</span><span class="p">(</span><span class="nx">baz</span><span class="p">);</span><span class="c1">//baz()有closure，因为其调用了enclosing scope中的参数a=2</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">bar1</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">fn</span><span class="p">();</span> <span class="c1">// look ma, I saw closure!</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo5</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">foo6</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">();</span><span class="c1">//调用了enclosing scope中的a=2，所以由closure</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">foo6</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">foo7</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">baaz</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">);</span> <span class="c1">// 2</span>
+        <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">fn</span><span class="p">();</span> <span class="c1">// look ma, I saw closure!</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">(</span><span class="nx">baaz</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span>
+    <span class="nx">baaz</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">bb</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo7</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nx">foo8</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">baaz</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">);</span> <span class="c1">// 2</span>
+        <span class="nx">aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">baaz</span><span class="p">();</span> <span class="c1">// look ma, I saw closure!</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span> <span class="c1">// aaa=10 not 2, closure is foo8</span>
+    <span class="nx">baaz</span><span class="p">()</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aaa</span><span class="p">)</span> <span class="c1">// aaa=10</span>
+    <span class="kd">var</span> <span class="nx">bb</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">foo8</span><span class="p">()</span></code></pre></figure>
+
+<p>由于bazz()调用foo8() scope中的参数aaa=2，所以其closure为foo8，当foo8中aaa参数被修改时，bazz() closure中中aaa也随之改变，所以console.log(aaa)输出10，而非2。</p>
+
+<h2 id="section-4">6</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//--------- setTimeout 在for 循环结束后才执行 ---------</span>
+<span class="kd">function</span> <span class="nx">waitSeconds</span><span class="p">(</span><span class="nx">iMilliSeconds</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">counter</span><span class="o">=</span> <span class="mi">0</span>
+        <span class="p">,</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span>
+        <span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">iMilliSeconds</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">end</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+        <span class="nx">counter</span> <span class="o">=</span> <span class="nx">end</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">);</span> <span class="p">},</span> <span class="mi">1000</span> <span class="p">);</span>
+     <span class="nx">waitSeconds</span><span class="p">(</span><span class="mi">1001</span><span class="p">)</span>
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'pajeopifaj'</span><span class="o">+</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'ajofpewijfopaej'</span><span class="p">)</span></code></pre></figure>
+
+<p>setTimeout函数的function timer()在主进程执行完毕之后才执行，但是setTimeout在被调用时就开始计时，所以setTimeout的执行结果在主进程执行完毕时瞬间全部弹出。
+——— 上面循环的 equivalent ———</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">i</span><span class="o">++</span>
+<span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">);</span> <span class="p">},</span> <span class="mi">1000</span> <span class="p">);</span>
+<span class="nx">i</span><span class="o">++</span>
+<span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">);</span> <span class="p">},</span> <span class="mi">1000</span> <span class="p">);</span>
+<span class="nx">i</span><span class="o">++</span>
+<span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">);</span> <span class="p">},</span> <span class="mi">1000</span> <span class="p">);</span>
+<span class="nx">i</span><span class="o">++</span>
+<span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">);</span> <span class="p">},</span> <span class="mi">1000</span> <span class="p">);</span>
+<span class="nx">i</span><span class="o">++</span>
+<span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="p">);</span> <span class="p">},</span> <span class="mi">1000</span> <span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'japoweijfopaijwe'</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="section-5">7</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">count</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">cool</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">self</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">count</span><span class="p">)},</span><span class="mi">100</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">cool</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'jojio'</span><span class="o">+</span><span class="nx">obj</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span></code></pre></figure>
+
+<p>由于setTimeout中的function参数在主进程全部执行完毕后才开始执行，所以console.log(‘jojio’+obj.count)处obj.count的值为0（function(){self.count++}的++操作尚未执行）。但主进程console.log(‘jojio’+obj.count)执行完毕输出“jojio10”后，setTimeout中function()开始执行，将count修改成1，并输出。</p>
+
+            </article>
+        </div>
+      </div>
+      <div class="panel docs-content">
+        <article class="post-content">
+          <div class="wrapper">
+            
+
+
+  <div class="ds-thread" data-thread-key="/2016/12/15/book2/" data-title="各种坑" data-url="http://localhost:4000/2016/12/15/book2/"></div>
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"bear2prince"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+ 
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2016 <a href="https://bear2prince.github.io"><code>bear2prince</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme from <a href="http://lesscss.cn/">Less</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/application.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+
+
+  </body>
+</html>
