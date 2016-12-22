@@ -182,6 +182,7 @@
       <li><a href="#keng-varlet" id="markdown-toc-keng-varlet">2.1.2 Keng: var和let不能对同一变量混用</a></li>
       <li><a href="#section-2" id="markdown-toc-section-2">4</a></li>
       <li><a href="#unknown-delete--strict-mode" id="markdown-toc-unknown-delete--strict-mode">Unknown: delete 会影响 strict mode</a></li>
+      <li><a href="#big-keng-babelletvar" id="markdown-toc-big-keng-babelletvar">Big Keng: babel在有的情况下会将let翻译成var</a></li>
     </ul>
   </li>
 </ul>
@@ -321,8 +322,8 @@
 <span class="nx">test_brace_scope_b</span><span class="p">()</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 2; global var</span></code></pre></figure>
 
-<p>var声明的变量的scope不受<code class="highlighter-rouge"><span class="p">{}</span></code>限制，所以变量<code class="highlighter-rouge">a</code>的scope包括了第一个函数内的全部范围，而在函数外没有scope。
-let声明的变量的scope受<code class="highlighter-rouge"><span class="p">{}</span></code>限制，所以let声明的变量<code class="highlighter-rouge">b</code>只在括号内拥有scope。在括号外执行<code class="highlighter-rouge">b=2</code>时，产生了另一个全局变量b。</p>
+<p>var声明的变量没有block scope (<code class="highlighter-rouge"><span class="p">{}</span></code>)，所以变量<code class="highlighter-rouge">a</code>的scope包括了第一个函数内的全部范围，而在函数外没有scope。
+let声明的变量有block scope，所以let声明的变量<code class="highlighter-rouge">b</code>只在括号内拥有scope。在括号外执行<code class="highlighter-rouge">b=2</code>时，产生了另一个全局变量b。</p>
 
 <h2 id="keng--2">2.1.2 Keng: 重复声明</h2>
 
@@ -359,9 +360,9 @@ let声明的变量的scope受<code class="highlighter-rouge"><span class="p">{}<
 <span class="nx">test_brace_scope1</span><span class="p">()</span>
 
 <span class="kd">function</span> <span class="nx">test_brace_scope2</span><span class="p">(){</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)){</span><span class="c1">//循环条件中的i每次循环都从1增加至2</span>
         <span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span> <span class="c1">// 循环条件和内容中的i是同一个</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">// 始终为1</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">// 这里的输出始终为1</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nx">test_brace_scope2</span><span class="p">()</span>
@@ -404,6 +405,33 @@ let声明的变量的scope受<code class="highlighter-rouge"><span class="p">{}<
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span></code></pre></figure>
 
 <p>在<code class="highlighter-rouge">"use strict";</code>之前使用<code class="highlighter-rouge">delete</code>语句，strict mode会失效，原因未确定。</p>
+
+<h2 id="big-keng-babelletvar">Big Keng: babel在有的情况下会将let翻译成var</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">bar</span> <span class="p">);</span> <span class="c1">// ReferenceError!</span>
+<span class="kd">let</span> <span class="nx">bar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
+
+<p>直接在google dev console中输入此段代码会报<code class="highlighter-rouge">ReferenceError</code>，因为let声明不会将变量<code class="highlighter-rouge">bar</code> hoisted，
+而用babel将此段代码翻译后再在google dev console中执行，不会报<code class="highlighter-rouge">ReferenceError</code>，因为babel将let
+翻译成var，<code class="highlighter-rouge">bar</code>被hoisted，翻译后代码如下：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">"use strict"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bar</span><span class="p">);</span> <span class="c1">// No ReferenceError at all!</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
+
+<p>此外，如下情况let也会被babel翻译成var</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>babel翻译后的代码：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><a href="http://stackoverflow.com/questions/41115555/babeljs-transpile-let-to-var-with-presets-to-es2015?noredirect=1#comment69435790_41115555">stackoverflow链接</a></p>
 
             </article>
         </div>
